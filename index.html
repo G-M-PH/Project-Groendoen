@@ -1,16 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Groen & Gewoon Doen</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="header"></div>
-    <main></main>
-    <div id="footer"></div>
+
+    <header class="top-header">
+        <div class="logo-text">Groen & Gewoon doen</div>
+    </header>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Over mij</a></li>
+            <li><a href="#">Pakketten</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="intro-section">
+            <h1>Maak nu afspraak</h1>
+            <p>Vul het formulier in. Henk beoordeelt de aanvraag.</p>
+        </section>
+
+        <section class="form-section">
+            <div class="card form-card">
+                <h2>Bestelling plaatsen</h2>
+                <form id="orderForm">
+                    
+                    <div class="form-group">
+                        <label for="name">Naam:</label>
+                        <input type="text" id="name" placeholder="Uw naam" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Adres:</label>
+                        <input type="text" id="address" placeholder="Straat en huisnummer" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="zipcity">Postcode & Plaats:</label>
+                        <input type="text" id="zipcity" placeholder="1234AB Plaats" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" placeholder="Voor bevestiging" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefoon:</label>
+                            <input type="tel" id="phone" placeholder="Voor overleg" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Voorkeursdatum:</label>
+                        <input type="date" id="date" required>
+                        <small>Let op: Henk moet deze datum nog goedkeuren.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="packageSelect">Kies uw pakket:</label>
+                        <select id="packageSelect" required>
+                            <option value="">-- Even geduld, laden... --</option>
+                            </select>
+                    </div>
+
+                    <button type="submit" class="btn-green">Aanvraag Versturen</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="reviews-section">
+            <h2>Reviews</h2>
+            <div class="cards-container">
+                <div class="card review-card">
+                    <h3>jan Bouwman</h3>
+                    <p>"Henk top werk gozer."</p>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="card review-card">
+                    <h3>Belastingdienst</h3>
+                    <p>"Henk het word tijd dat je je belasting aangiften gaat doen"</p>
+                    <div class="stars">⭐⭐</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="offer-section">
+            <h2>Wat wordt aan u aangeboden</h2>
+            <div class="cards-container">
+                <div class="card offer-card">
+                    <h3>Geweldige aanbiedingen</h3>
+                    <p>Voor de grote pakket krijg je korting</p>
+                </div>
+                <div class="card offer-card">
+                    <h3>Kwaliteit hovenierwerk</h3>
+                    <p>100% kans op mooie tuin geen oplichting</p>
+                </div>
+                <div class="card offer-card">
+                    <h3>Alleen contant</h3>
+                    <p>Belastingdienst mag niet weten wat ik doe</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Henk Tuinman</p>
+    </footer>
+
     <script src="scripts/functions.js"></script>
     <script src="scripts/script.js"></script>
+
 </body>
 </html>

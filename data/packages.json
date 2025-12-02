@@ -1,0 +1,23 @@
+[
+  {
+    "id": "pakket_s",
+    "name": "Kleine Tuin (tot 25m²)",
+    "description": "Basis onderhoud: maaien & kantjes.",
+    "hours": 4,
+    "total_price": 140.00
+  },
+  {
+    "id": "pakket_m",
+    "name": "Middelgrote Tuin (tot 60m²)",
+    "description": "Volledig onderhoud (1 dag).",
+    "hours": 8,
+    "total_price": 260.00
+  },
+  {
+    "id": "pakket_l",
+    "name": "Grote Tuin (tot 120m²)",
+    "description": "Groot onderhoud (2 dagen).",
+    "hours": 16,
+    "total_price": 480.00
+  }
+]

@@ -1,0 +1,78 @@
+/* assets/css/style.css */
+
+/* Basis Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* HEADER: Donkergrijs met overlay */
+.top-header {
+    background-color: #333;
+    /* Als je een foto hebt, zet die in assets/images/header.jpg en haal commentaar weg: */
+    /* background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/header.jpg'); */
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.logo-text {
+    font-family: 'Kaushan Script', cursive;
+    color: white;
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+/* NAVIGATIE: Groen */
+.main-nav { background-color: #557A5B; padding: 15px; text-align: center; }
+.main-nav ul { list-style: none; }
+.main-nav li { display: inline; margin: 0 15px; }
+.main-nav a { color: white; text-decoration: none; font-size: 1.2rem; font-weight: bold; }
+.main-nav a:hover { text-decoration: underline; }
+
+/* MAIN CONTENT */
+main { flex: 1; max-width: 1000px; margin: 0 auto; padding: 40px 20px; text-align: center; width: 100%; }
+h1, h2 { margin-bottom: 20px; color: #222; }
+p { margin-bottom: 15px; }
+small { display: block; margin-top: 5px; color: #666; font-size: 0.85rem; }
+
+/* CARDS STYLING */
+.card {
+    background-color: #f4f4f4;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* De schaduw uit je design */
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* FORMULIER SPECIFIEK */
+.form-card { max-width: 600px; margin: 0 auto 40px auto; text-align: left; background-color: #eeeeee; }
+.form-group { margin-bottom: 15px; }
+.form-row { display: flex; gap: 15px; }
+.form-row .form-group { flex: 1; }
+
+label { display: block; margin-bottom: 5px; font-weight: bold; color: #2e4d34; }
+input, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; }
+
+/* GROENE KNOP */
+.btn-green {
+    background-color: #3f6346; color: white; border: none; padding: 15px 30px;
+    font-size: 1.2rem; border-radius: 8px; cursor: pointer; width: 100%; margin-top: 10px; font-weight: bold;
+}
+.btn-green:hover { background-color: #2e4d34; }
+
+/* GRID VOOR REVIEWS & OFFERS */
+.cards-container { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+.review-card, .offer-card { flex: 1; min-width: 250px; }
+.stars { color: gold; font-size: 1.2rem; margin-top: 10px; }
+
+/* FOOTER */
+.main-footer { background-color: #557A5B; color: white; text-align: center; padding: 20px; margin-top: auto; }
