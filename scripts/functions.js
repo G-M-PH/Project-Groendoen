@@ -10,9 +10,6 @@ async function loadPage(id, file) {
 }
 
 async function loadPackages() {
-    if(!page==package){
-
-    }
     try {
         // Let op het pad: vanuit index.html gaan we naar assets/data/
         const response = await fetch('data/packages.json');
