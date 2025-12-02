@@ -11,17 +11,34 @@
 </head>
 <body>
 
-        <nav class="main-nav">
-        <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Over mij</a></li>
-            <li><a href="#">Pakketten</a></li>
-        </ul>
-    </nav>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand">
+                <span class="brand-icon" aria-hidden="true">🌿</span>
+                <span class="brand-text">Groen &amp; Gewoon Doen</span>
+            </a>
 
-    <header class="top-header">
-        <div class="logo-text">Groen & Gewoon doen</div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toon navigatie">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="over.html">Over mij</a></li>
+                    <li><a href="pakketten.html">Pakketten</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="top-hero">
+            <div class="container">
+                <h1>Henk's Tuinservices — Snel, Betrouwbaar &amp; Natuurlijk</h1>
+                <p class="hero-sub">Boek een standaard pakket of vraag een custom offerte aan. Henk beoordeelt alles persoonlijk.</p>
+                <a href="#orderForm" class="btn-green btn-hero">Nu aanvragen</a>
+            </div>
+        </div>
     </header>
 
 
@@ -32,52 +49,117 @@
         </section>
 
         <section class="form-section">
-            <div class="card form-card">
-                <h2>Bestelling plaatsen</h2>
-                <form id="orderForm">
-                    
-                    <div class="form-group">
-                        <label for="name">Naam:</label>
-                        <input type="text" id="name" placeholder="Uw naam" required>
-                    </div>
+            <form id="orderForm" class="form-clean" novalidate>
+                <div class="form-container">
+                    <h2>Bestelling plaatsen</h2>
+                    <p class="form-intro">Vul je gegevens en voorkeur in. Henk bekijkt alles en neemt contact op.</p>
 
-                    <div class="form-group">
-                        <label for="address">Adres:</label>
-                        <input type="text" id="address" placeholder="Straat en huisnummer" required>
+                    <!-- Contactgegevens -->
+                    <div class="form-group-title">Contactgegevens</div>
+                    <div class="field">
+                        <label for="name">Naam *</label>
+                        <input type="text" id="name" placeholder="Voor- en achternaam" required aria-required="true">
+                        <div class="input-error" aria-live="polite"></div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="zipcity">Postcode & Plaats:</label>
-                        <input type="text" id="zipcity" placeholder="1234AB Plaats" required>
+                    <div class="field">
+                        <label for="email">E-mailadres *</label>
+                        <input type="email" id="email" placeholder="naam@voorbeeld.nl" required>
+                        <div class="input-error" aria-live="polite"></div>
                     </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">E-mail:</label>
-                            <input type="email" id="email" placeholder="Voor bevestiging" required>
+                    <div class="form-row-2">
+                        <div class="field">
+                            <label for="phone">Telefoon</label>
+                            <input type="tel" id="phone" placeholder="06 12 34 56 78">
                         </div>
-                        <div class="form-group">
-                            <label for="phone">Telefoon:</label>
-                            <input type="tel" id="phone" placeholder="Voor overleg" required>
+                        <div class="field">
+                            <label for="address">Adres</label>
+                            <input type="text" id="address" placeholder="Straat en huisnummer">
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label for="date">Voorkeursdatum:</label>
-                        <input type="date" id="date" required>
-                        <small>Let op: Henk moet deze datum nog goedkeuren.</small>
+                    <div class="field">
+                        <label for="zipcity">Postcode & Plaats</label>
+                        <input type="text" id="zipcity" placeholder="1234AB Plaats">
                     </div>
 
-                    <div class="form-group">
-                        <label for="packageSelect">Kies uw pakket:</label>
-                        <select id="packageSelect" required>
-                            <option value="">-- Even geduld, laden... --</option>
-                            </select>
+                    <!-- Voorkeur -->
+                    <div class="form-group-title">Voorkeur & Type</div>
+                    <div class="field">
+                        <label for="date">Voorkeursdatum</label>
+                        <input type="date" id="date">
+                        <div class="input-help">Henk bevestigt of de datum beschikbaar is.</div>
                     </div>
 
-                    <button type="submit" class="btn-green">Aanvraag Versturen</button>
-                </form>
-            </div>
+                    <div class="field">
+                        <label>Wat wilt u?</label>
+                        <div class="radio-group">
+                            <label class="radio-inline"><input type="radio" name="orderType" value="package" checked> Standaard pakket</label>
+                            <label class="radio-inline"><input type="radio" name="orderType" value="custom"> Custom offerte</label>
+                        </div>
+                    </div>
+
+                    <!-- Package selectie -->
+                    <div id="packageBlock" class="field">
+                        <label for="packageSelect">Kies uw pakket</label>
+                        <select id="packageSelect">
+                            <option value="">-- Kies een pakket --</option>
+                        </select>
+                    </div>
+
+                    <!-- Custom offerte -->
+                    <div id="customOptions" style="display:none">
+                        <div class="form-group-title">Custom Offerte</div>
+                        <p class="input-help" style="margin-bottom:12px">Selecteer werkzaamheden en vul hoeveelheden in.</p>
+                        <div class="custom-options-list">
+                            <div class="custom-row">
+                                <label class="check"><input type="checkbox" class="opt" data-key="gras"/> Gras maaien (m²)</label>
+                                <input type="number" class="opt-qty" data-key="gras" min="0" placeholder="m²" />
+                            </div>
+                            <div class="custom-row">
+                                <label class="check"><input type="checkbox" class="opt" data-key="heg"/> Heg knippen (m)</label>
+                                <input type="number" class="opt-qty" data-key="heg" min="0" placeholder="m" />
+                            </div>
+                            <div class="custom-row">
+                                <label class="check"><input type="checkbox" class="opt" data-key="onkruid"/> Onkruid verwijderen (m²)</label>
+                                <input type="number" class="opt-qty" data-key="onkruid" min="0" placeholder="m²" />
+                            </div>
+                            <div class="custom-row">
+                                <label class="check"><input type="checkbox" class="opt" data-key="snoei"/> Snoeien (uur)</label>
+                                <input type="number" class="opt-qty" data-key="snoei" min="0" step="0.5" placeholder="uur" />
+                            </div>
+                            <div class="custom-row">
+                                <label class="check"><input type="checkbox" class="opt" data-key="afvoer"/> Groenafval afvoeren (m³)</label>
+                                <input type="number" class="opt-qty" data-key="afvoer" min="0" step="0.1" placeholder="m³" />
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="customNotes">Extra toelichting</label>
+                            <input id="customNotes" placeholder="Beschrijf wensen of bijzonderheden">
+                        </div>
+                        <div class="field">
+                            <label>Geschatte prijs:</label>
+                            <div class="price-display"><strong id="customEstimate">€0</strong></div>
+                        </div>
+                    </div>
+
+                    <!-- Extra info -->
+                    <div class="form-group-title">Extra informatie</div>
+                    <div class="form-row-2">
+                        <div class="field">
+                            <label for="m2">Grootte (m²)</label>
+                            <input type="number" id="m2" placeholder="Bijv. 50" min="0">
+                        </div>
+                        <div class="field">
+                            <label for="notes">Notities</label>
+                            <input type="text" id="notes" placeholder="Optioneel">
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn-green btn-large" id="submitOrder">Aanvraag verzenden</button>
+                    </div>
+                </div>
+            </form>
         </section>
 
         <section class="reviews-section">
@@ -85,13 +167,13 @@
             <div class="cards-container">
                 <div class="card review-card">
                     <h3>jan Bouwman</h3>
-                    <p>"Henk top werk gozer."</p>
+                    <p>"Henk levert altijd netjes werk. Zeer tevreden over het resultaat."</p>
                     <div class="stars">⭐⭐⭐⭐⭐</div>
                 </div>
                 <div class="card review-card">
-                    <h3>Belastingdienst</h3>
-                    <p>"Henk het word tijd dat je je belasting aangiften gaat doen"</p>
-                    <div class="stars">⭐⭐</div>
+                    <h3>Marieke van Dijk</h3>
+                    <p>"Snelle reactie en vriendelijke service. Tuin ziet er weer top uit."</p>
+                    <div class="stars">⭐⭐⭐⭐</div>
                 </div>
             </div>
         </section>
@@ -100,16 +182,16 @@
             <h2>Wat wordt aan u aangeboden</h2>
             <div class="cards-container">
                 <div class="card offer-card">
-                    <h3>Geweldige aanbiedingen</h3>
-                    <p>Voor de grote pakket krijg je korting</p>
+                    <h3>Transparante prijzen</h3>
+                    <p>Duidelijke offertes zonder verborgen kosten.</p>
                 </div>
                 <div class="card offer-card">
-                    <h3>Kwaliteit hovenierwerk</h3>
-                    <p>100% kans op mooie tuin geen oplichting</p>
+                    <h3>Professioneel vakwerk</h3>
+                    <p>Jarenlange ervaring met onderhoud en tuinrenovatie.</p>
                 </div>
                 <div class="card offer-card">
-                    <h3>Alleen contant</h3>
-                    <p>Belastingdienst mag niet weten wat ik doe</p>
+                    <h3>Flexibele planning</h3>
+                    <p>Mogelijkheid tot vaste onderhoudsafspraken.</p>
                 </div>
             </div>
         </section>
@@ -118,6 +200,18 @@
     <footer class="main-footer">
         <p>&copy; 2025 Henk Tuinman</p>
     </footer>
+
+    <!-- Success modal (used after sending an aanvraag) -->
+    <div id="successModal" class="modal" aria-hidden="true">
+        <div class="modal-content success" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+            <button class="modal-close" id="successClose" aria-label="Sluiten">✕</button>
+            <h3 id="successTitle">Aanvraag verzonden</h3>
+            <p id="successMessage">Bedankt — uw aanvraag is verzonden. Henk bekijkt uw aanvraag en neemt contact op.</p>
+            <div style="text-align:right;margin-top:10px">
+                <button class="btn-secondary" id="successOk">Oké</button>
+            </div>
+        </div>
+    </div>
 
     <script src="scripts/functions.js"></script>
     <script src="scripts/script.js"></script>

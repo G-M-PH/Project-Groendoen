@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Admin - Groen & Gewoon Doen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="brand">
+                <span class="brand-icon" aria-hidden="true">🌿</span>
+                <span class="brand-text">Groen &amp; Gewoon Doen — Admin</span>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toon navigatie">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="verslag.html">Verslag</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="over.html">Over mij</a></li>
+                    <li><a href="pakketten.html">Pakketten</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Admin Dashboard</h1>
+
+        <section class="card">
+            <h2>Openstaande aanvragen</h2>
+            <div id="ordersList">Laden...</div>
+        </section>
+
+        <section class="card">
+            <h2>Kalender — ingeplande dagen</h2>
+            <div id="calendar"></div>
+        </section>
+
+        <section class="card">
+            <h2>Pakketbeheer (snel aanpassen)</h2>
+            <div id="packagesEditor">
+                <div id="packagesList">Laden...</div>
+
+                <h3>Nieuw pakket toevoegen</h3>
+                <form id="addPackageForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pkgName">Naam</label>
+                            <input id="pkgName" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="pkgHours">Uren</label>
+                            <input id="pkgHours" type="number" min="0" required />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pkgPrice">Totaal prijs (€)</label>
+                            <input id="pkgPrice" type="number" min="0" step="0.01" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="pkgDesc">Omschrijving</label>
+                            <input id="pkgDesc" />
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-green">Toevoegen</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Groen &amp; Gewoon Doen — Admin</p>
+    </footer>
+
+    <!-- Login modal (client-side auth) -->
+    <div id="loginModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" id="loginClose" aria-label="Sluit">✕</button>
+            <h2>Admin Login</h2>
+            <p>Voer het admin-wachtwoord in om door te gaan.</p>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="adminPassword">Wachtwoord</label>
+                    <input id="adminPassword" type="password" required />
+                </div>
+                <button class="btn-green" type="submit">Inloggen</button>
+            </form>
+            <p style="font-size:0.85rem;color:#666;margin-top:8px">(Tijdelijke client-side bescherming)</p>
+        </div>
+    </div>
+
+    <!-- Order details modal -->
+    <div id="orderModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" id="orderClose" aria-label="Sluit">✕</button>
+            <div id="orderModalContent">Laden...</div>
+        </div>
+    </div>
+
+    <script src="scripts/functions.js"></script>
+    <script src="scripts/admin.js"></script>
+</body>
+</html>
