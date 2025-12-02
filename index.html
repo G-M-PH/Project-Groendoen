@@ -10,81 +10,24 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<header id="header">
 
-        <nav class="main-nav">
-        <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Over mij</a></li>
-            <li><a href="#">Pakketten</a></li>
-        </ul>
-    </nav>
-
-    <header class="top-header">
+</header>
+    <div class="top-header">
         <div class="logo-text">Groen & Gewoon doen</div>
-    </header>
-
-
+        <a class="header-button" href="pakketten.html">Maak nu afspraak</a>
+    </div>
     <main>
         <section class="intro-section">
             <h1>Maak nu afspraak</h1>
             <p>Vul het formulier in. Henk beoordeelt de aanvraag.</p>
         </section>
 
-        <section class="form-section">
-            <div class="card form-card">
-                <h2>Bestelling plaatsen</h2>
-                <form id="orderForm">
-                    
-                    <div class="form-group">
-                        <label for="name">Naam:</label>
-                        <input type="text" id="name" placeholder="Uw naam" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="address">Adres:</label>
-                        <input type="text" id="address" placeholder="Straat en huisnummer" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="zipcity">Postcode & Plaats:</label>
-                        <input type="text" id="zipcity" placeholder="1234AB Plaats" required>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">E-mail:</label>
-                            <input type="email" id="email" placeholder="Voor bevestiging" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Telefoon:</label>
-                            <input type="tel" id="phone" placeholder="Voor overleg" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="date">Voorkeursdatum:</label>
-                        <input type="date" id="date" required>
-                        <small>Let op: Henk moet deze datum nog goedkeuren.</small>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="packageSelect">Kies uw pakket:</label>
-                        <select id="packageSelect" required>
-                            <option value="">-- Even geduld, laden... --</option>
-                            </select>
-                    </div>
-
-                    <button type="submit" class="btn-green">Aanvraag Versturen</button>
-                </form>
-            </div>
-        </section>
-
         <section class="reviews-section">
             <h2>Reviews</h2>
             <div class="cards-container">
                 <div class="card review-card">
-                    <h3>jan Bouwman</h3>
+                    <h3>Jan Bouwman</h3>
                     <p>"Henk top werk gozer."</p>
                     <div class="stars">⭐⭐⭐⭐⭐</div>
                 </div>
@@ -115,9 +58,7 @@
         </section>
     </main>
 
-    <footer class="main-footer">
-        <p>&copy; 2025 Henk Tuinman</p>
-    </footer>
+    <footer id="footer"></footer>
 
     <script src="scripts/functions.js"></script>
     <script src="scripts/script.js"></script>

@@ -3,7 +3,16 @@
 /**
  * Haal pakketten uit de JSON en vul de dropdown
  */
+async function loadPage(id, file) {
+  const response = await fetch(file);
+  const html = await response.text();
+  document.getElementById(id).innerHTML = html;
+}
+
 async function loadPackages() {
+    if(!page==package){
+
+    }
     try {
         // Let op het pad: vanuit index.html gaan we naar assets/data/
         const response = await fetch('data/packages.json');
@@ -37,4 +46,8 @@ function createOrder(orderData) {
     
     // Simpele feedback voor week 3
     alert(`Bedankt ${orderData.klant.naam}!\nJe aanvraag staat nu op status: '${orderData.status}'.\nHenk neemt contact op via ${orderData.klant.email}.`);
+}
+
+function loadpage(id){
+    
 }
