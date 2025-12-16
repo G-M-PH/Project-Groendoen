@@ -87,3 +87,37 @@ input, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radiu
 
 /* FOOTER */
 .main-footer { background-color: #557A5B; color: white; text-align: center; padding: 20px; margin-top: auto; }
+
+/* PAKKETTEN TABEL */
+.packages-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.packages-table th, .packages-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.packages-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.packages-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.packages-table button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.packages-table button:hover {
+    background-color: #e0e0e0;
+}
