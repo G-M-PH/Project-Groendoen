@@ -3,7 +3,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     // 1. Laad de pakketten direct in de lijst
-    loadPackages();
+if (window.location.pathname === "/pakketten.html") {
+  loadPackages();
+}
 
     // 2. Luister naar het formulier
     const form = document.getElementById('orderForm');
@@ -41,3 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+document.getElementById("groote").addEventListener("input", () => {
+const groote = document.getElementById('groote').value;
+totaalPrijs = groote*2
+displayTotaal(totaalPrijs)
+});
+
+loadPage("header", "header.html");
+loadPage("footer", "footer.html");
