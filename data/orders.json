@@ -1,0 +1,32 @@
+[
+  {
+    "id": "ord-001",
+    "klant": {
+      "naam": "Piet Jansen",
+      "email": "piet@example.com",
+      "phone": "0612345678",
+      "address": "Dorpsstraat 12"
+    },
+    "pakket": "Kleine Tuin",
+    "preferredDate": "2025-12-10",
+    "m2": 20,
+    "notes": "Gazon maaien en heg snoeien.",
+    "status": "In afwachting van goedkeuring",
+    "price": 100
+  },
+  {
+    "id": "ord-002",
+    "klant": {
+      "naam": "Sophie de Vries",
+      "email": "sophie@example.com",
+      "phone": "0687654321",
+      "address": "Lindelaan 3"
+    },
+    "pakket": "Voorjaarsbeurt",
+    "preferredDate": "2025-12-11",
+    "m2": 35,
+    "notes": "Onkruid verwijderen en groenafval meenemen.",
+    "status": "In afwachting van goedkeuring",
+    "price": 200
+  }
+]

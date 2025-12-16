@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Admin - Groen & Gewoon Doen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="verslag.html">Verslag</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="over.html">Over mij</a></li>
+                    <li><a href="pakketten.html">Pakketten</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>Admin Dashboard</h1>
+
+
+
+        <section class="card">
+            <h2>Pakketbeheer (snel aanpassen)</h2>
+            <div id="packagesEditor">
+                <div id="packagesList">Laden...</div>
+
+                <h3>Nieuw pakket toevoegen</h3>
+                <form id="addPackageForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pkgName">Naam</label>
+                            <input id="pkgName" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="pkgHours">Uren</label>
+                            <input id="pkgHours" type="number" min="0" required />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pkgPrice">Totaal prijs (€)</label>
+                            <input id="pkgPrice" type="number" min="0" step="0.01" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="pkgDesc">Omschrijving</label>
+                            <input id="pkgDesc" />
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-green">Toevoegen</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Groen &amp; Gewoon Doen — Admin</p>
+    </footer>
+
+    <script src="scripts/functions.js"></script>
+    <script src="scripts/admin.js"></script>
+</body>
+</html>
