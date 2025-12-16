@@ -22,7 +22,7 @@ async function loadPackages() {
             const option = document.createElement('option');
             option.value = pakket.id;
             // Tekst voorbeeld: "Kleine Tuin (4 uur) - €140"
-            option.textContent = `${pakket.name} (${pakket.hours} uur) - €${pakket.total_price}`;
+            option.textContent = `${pakket.name} (${pakket.hours} uur) - €${pakket.total_price} per m`;
             select.appendChild(option);
         });
 
@@ -45,6 +45,6 @@ function createOrder(orderData) {
     alert(`Bedankt ${orderData.klant.naam}!\nJe aanvraag staat nu op status: '${orderData.status}'.\nHenk neemt contact op via ${orderData.klant.email}.`);
 }
 
-function loadpage(id){
-    
+function displayTotaal(prijs){
+ document.getElementById("totaal-display").textContent = "€"+ prijs;
 }

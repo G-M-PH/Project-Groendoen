@@ -44,6 +44,11 @@ if (window.location.pathname === "/pakketten.html") {
     }
 });
 
+document.getElementById("groote").addEventListener("input", () => {
+const groote = document.getElementById('groote').value;
+totaalPrijs = groote*2
+displayTotaal(totaalPrijs)
+});
 
 loadPage("header", "header.html");
 loadPage("footer", "footer.html");
